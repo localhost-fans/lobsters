@@ -7,10 +7,10 @@ User.create(
 )
 
 User.create(
-  :username => "test",
-  :email => "test@example.com",
-  :password => "test",
-  :password_confirmation => "test",
+  :username => "superuser",
+  :email => "superuser@example.com",
+  :password => "superuser",
+  :password_confirmation => "superuser",
   :is_admin => true,
   :is_moderator => true,
   :karma => [
@@ -26,7 +26,7 @@ c = Category.create!(category: "Category")
 Tag.create(category: c, tag: "test")
 
 puts "created:"
-puts "  * an admin with username/password of test/test"
+puts "  * an admin with username/password of superuser/superuser"
 puts "  * inactive-user for disowned comments by deleted users"
 puts "  * a test tag"
 puts

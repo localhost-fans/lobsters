@@ -104,13 +104,11 @@ end
 
 desc 'Generates fake data for testing purposes'
 task fake_data: :environment do
-  fail "Refusing to add fake-data to a non-development environment" unless Rails.env.development?
-
   record_count = User.count + Tag.count + Story.count + Comment.count
   if record_count > 3 # more than would be created by db:seed
     warn "Database has #{record_count} records, are you sure you want to add more? [y to continue]"
     fail "Cancelled" if STDIN.gets.chomp != 'y'
   end
 
-  FakeDataGenerator.new(20, 200, 5).generate
+  FakeDataGenerator.new(1, 3, 1).generate
 end
